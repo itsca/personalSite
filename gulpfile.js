@@ -27,7 +27,8 @@ if (env ==='development') {
 };
 
 jsSources = [
-	'components/scripts/init.js'
+	'components/scripts/init.js',
+	'components/scripts/angular/app.js'
 	]; //Array of locations of js script files to unify(concat).
 
 sassSources = ['components/sass/style.sass']; //Array of locations of sass files to process(compass).

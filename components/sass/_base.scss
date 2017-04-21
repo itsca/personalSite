@@ -1,2 +1,25 @@
 // _base.scss
 // ==============
+body {
+  margin: 0px;
+  background: url("http://javierescalante.info/img/profile7.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.cf {
+	clear: both;
+}
+
+#main-color-back {
+	position: fixed;
+	z-index: -1;
+	background: #ad6e66; /* Old browsers */
+	background: -moz-linear-gradient(top, #ad6e66 1%, #19203f 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ad6e66 1%,#19203f 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ad6e66 1%,#19203f 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	height: 100vh;
+	width: 100%;
+	@include animation('fade-back 5s forwards');
+}

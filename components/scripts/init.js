@@ -1,1 +1,3 @@
-var jquery = require('jquery');
+global.jQuery = require('jquery');
+var angular = require('angular');
+ 
