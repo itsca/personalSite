@@ -1,0 +1,12 @@
+#landing-sec {
+	opacity: 0;
+	@include animation('apear 3s 3s forwards');
+	.container {
+		width: 50%;
+		padding: 0 1%;
+		background: #e40a4f;
+		-webkit-box-shadow: -7px 10px 0px 0px #1F2348;
+		-moz-box-shadow: -7px 10px 0px 0px #1F2348;
+		box-shadow: -7px 10px 0px 0px #1F2348;
+	}
+}

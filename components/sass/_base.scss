@@ -2,14 +2,23 @@
 // ==============
 body {
   margin: 0px;
-  background: url("http://javierescalante.info/img/profile7.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  @include backImage("http://javierescalante.info/img/myFace.gif");
   height: 100vh;
+  @media (max-width: 630px) {
+  	    background: url(http://javierescalante.info/img/myFace.gif) no-repeat 50% 50% !important;
+  }
+  transition: all 0.4s;
 }
 
 .cf {
 	clear: both;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
 }
 
 #main-color-back {
@@ -19,6 +28,7 @@ body {
 	background: -moz-linear-gradient(top, #ad6e66 1%, #19203f 99%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, #ad6e66 1%,#19203f 99%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, #ad6e66 1%,#19203f 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: #231F20;
 	height: 100vh;
 	width: 100%;
 	@include animation('fade-back 5s forwards');

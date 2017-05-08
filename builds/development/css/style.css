@@ -1,14 +1,45 @@
+@charset "UTF-8";
 @import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
 body {
   margin: 0px;
-  background: url("http://javierescalante.info/img/profile7.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background: url("http://javierescalante.info/img/myFace.gif") no-repeat 50% 30%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+ /*@media (min-width: 801px) {
+  height: 350px;
+ }
+
+ @media (max-width: 800px) {
+  height: 150px;
+ }
+
+ @media (max-width: 300px) {
+  height: 100px;
+ }*/
   height: 100vh;
+  transition: all 0.4s;
+}
+@media (max-width: 630px) {
+  body {
+    background: url(http://javierescalante.info/img/myFace.gif) no-repeat 50% 50% !important;
+  }
 }
 
 .cf {
   clear: both;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
 #main-color-back {
@@ -22,6 +53,7 @@ body {
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #ad6e66 1%, #19203f 99%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #231F20;
   height: 100vh;
   width: 100%;
   -webkit-animation: fade-back 5s forwards;
@@ -84,11 +116,7 @@ body {
 }
 @-webkit-keyframes apear {
   0% {
-    display: none;
     opacity: 0;
-  }
-  1% {
-    display: block;
   }
   100% {
     opacity: 1;
@@ -96,11 +124,7 @@ body {
 }
 @-moz-keyframes apear {
   0% {
-    display: none;
     opacity: 0;
-  }
-  1% {
-    display: block;
   }
   100% {
     opacity: 1;
@@ -108,11 +132,7 @@ body {
 }
 @-ms-keyframes apear {
   0% {
-    display: none;
     opacity: 0;
-  }
-  1% {
-    display: block;
   }
   100% {
     opacity: 1;
@@ -120,11 +140,7 @@ body {
 }
 @keyframes apear {
   0% {
-    display: none;
     opacity: 0;
-  }
-  1% {
-    display: block;
   }
   100% {
     opacity: 1;
@@ -135,7 +151,7 @@ body {
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.85;
   }
 }
 @-moz-keyframes fade-back {
@@ -143,7 +159,7 @@ body {
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.85;
   }
 }
 @-ms-keyframes fade-back {
@@ -151,7 +167,7 @@ body {
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.85;
   }
 }
 @keyframes fade-back {
@@ -159,11 +175,12 @@ body {
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.85;
   }
 }
 #main-head {
   width: 100%;
+  margin-bottom: 2.5em;
 }
 #main-head #logo-container {
   width: 100%;
@@ -174,10 +191,16 @@ body {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   transition: all 4s;
-  -webkit-animation: dash 5s forwards, shrink 4s 1s forwards;
-  -moz-animation: dash 5s forwards, shrink 4s 1s forwards;
-  -ms-animation: dash 5s forwards, shrink 4s 1s forwards;
-  animation: dash 5s forwards, shrink 4s 1s forwards;
+  -webkit-animation: dash 20s forwards, shrink 2.5s 1s forwards;
+  -moz-animation: dash 20s forwards, shrink 2.5s 1s forwards;
+  -ms-animation: dash 20s forwards, shrink 2.5s 1s forwards;
+  animation: dash 20s forwards, shrink 2.5s 1s forwards;
+}
+#main-head #main-nav {
+  -webkit-animation: apear 9s forwards;
+  -moz-animation: apear 9s forwards;
+  -ms-animation: apear 9s forwards;
+  animation: apear 9s forwards;
 }
 #main-head #main-nav ul {
   list-style: none;
@@ -194,6 +217,8 @@ body {
   padding: 10px 15px;
   color: #fff;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 1s;
 }
 #main-head #main-nav ul li a:hover {
   border-bottom: 1px solid #FFF;
@@ -202,7 +227,1066 @@ body {
   color: #fff;
   text-decoration: none;
 }
+#main-head #main-nav ul li a:active {
+  border-bottom: 1px solid #FFF;
+}
 
-main {
+.content-section {
+  opacity: 0;
+  -webkit-animation: apear 3s 0.5s forwards;
+  -moz-animation: apear 3s 0.5s forwards;
+  -ms-animation: apear 3s 0.5s forwards;
+  animation: apear 3s 0.5s forwards;
+  font-family: helvetica;
+  color: #fff;
+}
+.content-section .container {
+  position: relative;
+  width: 80%;
+  height: 400px;
+  max-height: 450px;
+  overflow: overlay;
+}
+@media (max-width: 780px) {
+  .content-section .container {
+    width: 90%;
+  }
+}
+.content-section #welcome-text {
+  line-height: 1.4em;
+}
+
+/* perfect-scrollbar v0.6.11 */
+.ps-container {
+  -ms-touch-action: none;
+  touch-action: none;
+  overflow: hidden !important;
+  -ms-overflow-style: none;
+}
+
+@supports (-ms-overflow-style: none) {
+  .ps-container {
+    overflow: auto !important;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps-container {
+    overflow: auto !important;
+  }
+}
+.ps-container.ps-active-x > .ps-scrollbar-x-rail, .ps-container.ps-active-y > .ps-scrollbar-y-rail {
+  display: block;
+  background-color: transparent;
+}
+
+.ps-container.ps-in-scrolling {
+  pointer-events: none;
+}
+
+.ps-container.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail {
+  background-color: transparent;
+  opacity: .9;
+}
+
+.ps-container.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+  background-color: #fff;
+}
+
+.ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail {
+  background-color: transparent;
+  opacity: .9;
+}
+
+.ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  background-color: #fff;
+}
+
+.ps-container > .ps-scrollbar-x-rail {
   display: none;
+  position: absolute;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  -moz-transition: background-color .2s linear, opacity .2s linear;
+  -o-transition: background-color .2s linear, opacity .2s linear;
+  transition: background-color .2s linear, opacity .2s linear;
+  bottom: 3px;
+  height: 8px;
+}
+
+.ps-container > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+  position: absolute;
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background-color .2s linear;
+  -moz-transition: background-color .2s linear;
+  -o-transition: background-color .2s linear;
+  transition: background-color .2s linear;
+  bottom: 0;
+  height: 8px;
+}
+
+.ps-container > .ps-scrollbar-y-rail {
+  display: none;
+  position: absolute;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  -moz-transition: background-color .2s linear, opacity .2s linear;
+  -o-transition: background-color .2s linear, opacity .2s linear;
+  transition: background-color .2s linear, opacity .2s linear;
+  right: 3px;
+  width: 2px;
+}
+
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  position: absolute;
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background-color .2s linear;
+  -moz-transition: background-color .2s linear;
+  -o-transition: background-color .2s linear;
+  transition: background-color .2s linear;
+  right: 0;
+  width: 2px;
+}
+
+.ps-container:hover.ps-in-scrolling {
+  pointer-events: none;
+}
+
+.ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail {
+  background-color: transparent;
+  opacity: .9;
+}
+
+.ps-container:hover.ps-in-scrolling.ps-x > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+  background-color: #fff;
+}
+
+.ps-container:hover.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail {
+  background-color: transparent;
+  opacity: .9;
+}
+
+.ps-container:hover.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  background-color: #fff;
+}
+
+.ps-container:hover > .ps-scrollbar-x-rail, .ps-container:hover > .ps-scrollbar-y-rail {
+  opacity: .6;
+}
+
+.ps-container:hover > .ps-scrollbar-x-rail:hover {
+  background-color: transparent;
+  opacity: .9;
+}
+
+.ps-container:hover > .ps-scrollbar-x-rail:hover > .ps-scrollbar-x {
+  background-color: #fff;
+}
+
+.ps-container:hover > .ps-scrollbar-y-rail:hover {
+  background-color: transparent;
+  opacity: .9;
+}
+
+.ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y {
+  background-color: #fff;
+}
+
+#landing-sec {
+  opacity: 0;
+  -webkit-animation: apear 3s 3s forwards;
+  -moz-animation: apear 3s 3s forwards;
+  -ms-animation: apear 3s 3s forwards;
+  animation: apear 3s 3s forwards;
+}
+#landing-sec .container {
+  width: 50%;
+  padding: 0 1%;
+  background: #e40a4f;
+  -webkit-box-shadow: -7px 10px 0px 0px #1F2348;
+  -moz-box-shadow: -7px 10px 0px 0px #1F2348;
+  box-shadow: -7px 10px 0px 0px #1F2348;
+}
+
+#about-sec ul {
+  list-style: none;
+  padding: 20px 0 0 0;
+  text-align: left;
+}
+#about-sec ul li {
+  margin-bottom: 2em;
+}
+#about-sec ul li .cv-tittle {
+  font-size: 1.3em;
+}
+#about-sec .container {
+  padding: 0px 15px;
+  background: #0A24E4;
+  -webkit-box-shadow: -7px 10px 0px 0px #1F2348;
+  -moz-box-shadow: -7px 10px 0px 0px #1F2348;
+  box-shadow: -7px 10px 0px 0px #1F2348;
+}
+
+#portfolio-sec .container {
+  background: #0AE485;
+  -webkit-box-shadow: -7px 10px 0px 0px #1F2348;
+  -moz-box-shadow: -7px 10px 0px 0px #1F2348;
+  box-shadow: -7px 10px 0px 0px #1F2348;
+}
+#portfolio-sec #filter-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#portfolio-sec #filter-nav li {
+  display: inline;
+}
+#portfolio-sec #filter-nav li a {
+  font-family: helvetica;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 1s;
+}
+#portfolio-sec #filter-nav li a:hover {
+  border-bottom: 1px solid #FFF;
+}
+#portfolio-sec #filter-nav li a:focus, #portfolio-sec #filter-nav li a:active, #portfolio-sec #filter-nav li a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+#portfolio-sec #filter-nav li a:active {
+  border-bottom: 1px solid #FFF;
+}
+#portfolio-sec #portfolio-wrap {
+  -webkit-column-count: 2;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 2;
+  /* Firefox */
+  column-count: 2;
+  transition: all 0.2s;
+  text-align: center;
+}
+#portfolio-sec #portfolio-wrap .mix {
+  display: none;
+  width: 50%;
+  border-style: solid;
+  border-color: #000000;
+  padding: 10px;
+  margin: 10px;
+}
+@media (max-width: 736px) {
+  #portfolio-sec #portfolio-wrap .mix {
+    width: 100%;
+  }
+}
+@media (max-width: 736px) {
+  #portfolio-sec #portfolio-wrap {
+    -webkit-column-count: 1;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 1;
+    /* Firefox */
+    column-count: 1;
+  }
+}
+
+/*!
+ *  Devicons 1.8.0 made by Theodore Vorillas / http://vorillaz.com 
+ */
+@font-face {
+  font-family: 'devicons';
+  src: url("../fonts/devicons/devicons.eot?xqxft6");
+  src: url("../fonts/devicons/devicons.eot?#iefixxqxft6") format("embedded-opentype"), url("../fonts/devicons/devicons.woff?xqxft6") format("woff"), url("../fonts/devicons/devicons.ttf?xqxft6") format("truetype"), url("../fonts/devicons/devicons.svg?xqxft6#devicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.devicons {
+  font-family: 'devicons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.devicons-git:before {
+  content: "";
+}
+
+.devicons-git_compare:before {
+  content: "";
+}
+
+.devicons-git_branch:before {
+  content: "";
+}
+
+.devicons-git_commit:before {
+  content: "";
+}
+
+.devicons-git_pull_request:before {
+  content: "";
+}
+
+.devicons-git_merge:before {
+  content: "";
+}
+
+.devicons-bitbucket:before {
+  content: "";
+}
+
+.devicons-github_alt:before {
+  content: "";
+}
+
+.devicons-github_badge:before {
+  content: "";
+}
+
+.devicons-github:before {
+  content: "";
+}
+
+.devicons-github_full:before {
+  content: "";
+}
+
+.devicons-java:before {
+  content: "";
+}
+
+.devicons-ruby:before {
+  content: "";
+}
+
+.devicons-scala:before {
+  content: "";
+}
+
+.devicons-python:before {
+  content: "";
+}
+
+.devicons-go:before {
+  content: "";
+}
+
+.devicons-ruby_on_rails:before {
+  content: "";
+}
+
+.devicons-django:before {
+  content: "";
+}
+
+.devicons-markdown:before {
+  content: "";
+}
+
+.devicons-php:before {
+  content: "";
+}
+
+.devicons-mysql:before {
+  content: "";
+}
+
+.devicons-streamline:before {
+  content: "";
+}
+
+.devicons-database:before {
+  content: "";
+}
+
+.devicons-laravel:before {
+  content: "";
+}
+
+.devicons-javascript:before {
+  content: "";
+}
+
+.devicons-angular:before {
+  content: "";
+}
+
+.devicons-backbone:before {
+  content: "";
+}
+
+.devicons-coffeescript:before {
+  content: "";
+}
+
+.devicons-jquery:before {
+  content: "";
+}
+
+.devicons-modernizr:before {
+  content: "";
+}
+
+.devicons-jquery_ui:before {
+  content: "";
+}
+
+.devicons-ember:before {
+  content: "";
+}
+
+.devicons-dojo:before {
+  content: "";
+}
+
+.devicons-nodejs:before {
+  content: "";
+}
+
+.devicons-nodejs_small:before {
+  content: "";
+}
+
+.devicons-javascript_shield:before {
+  content: "";
+}
+
+.devicons-bootstrap:before {
+  content: "";
+}
+
+.devicons-sass:before {
+  content: "";
+}
+
+.devicons-css3_full:before {
+  content: "";
+}
+
+.devicons-css3:before {
+  content: "";
+}
+
+.devicons-html5:before {
+  content: "";
+}
+
+.devicons-html5_multimedia:before {
+  content: "";
+}
+
+.devicons-html5_device_access:before {
+  content: "";
+}
+
+.devicons-html5_3d_effects:before {
+  content: "";
+}
+
+.devicons-html5_connectivity:before {
+  content: "";
+}
+
+.devicons-ghost_small:before {
+  content: "";
+}
+
+.devicons-ghost:before {
+  content: "";
+}
+
+.devicons-magento:before {
+  content: "";
+}
+
+.devicons-joomla:before {
+  content: "";
+}
+
+.devicons-jekyll_small:before {
+  content: "";
+}
+
+.devicons-drupal:before {
+  content: "";
+}
+
+.devicons-wordpress:before {
+  content: "";
+}
+
+.devicons-grunt:before {
+  content: "";
+}
+
+.devicons-bower:before {
+  content: "";
+}
+
+.devicons-npm:before {
+  content: "";
+}
+
+.devicons-yahoo_small:before {
+  content: "";
+}
+
+.devicons-yahoo:before {
+  content: "";
+}
+
+.devicons-bing_small:before {
+  content: "";
+}
+
+.devicons-windows:before {
+  content: "";
+}
+
+.devicons-linux:before {
+  content: "";
+}
+
+.devicons-ubuntu:before {
+  content: "";
+}
+
+.devicons-android:before {
+  content: "";
+}
+
+.devicons-apple:before {
+  content: "";
+}
+
+.devicons-appstore:before {
+  content: "";
+}
+
+.devicons-phonegap:before {
+  content: "";
+}
+
+.devicons-blackberry:before {
+  content: "";
+}
+
+.devicons-stackoverflow:before {
+  content: "";
+}
+
+.devicons-techcrunch:before {
+  content: "";
+}
+
+.devicons-codrops:before {
+  content: "";
+}
+
+.devicons-css_tricks:before {
+  content: "";
+}
+
+.devicons-smashing_magazine:before {
+  content: "";
+}
+
+.devicons-netmagazine:before {
+  content: "";
+}
+
+.devicons-codepen:before {
+  content: "";
+}
+
+.devicons-cssdeck:before {
+  content: "";
+}
+
+.devicons-hackernews:before {
+  content: "";
+}
+
+.devicons-dropbox:before {
+  content: "";
+}
+
+.devicons-google_drive:before {
+  content: "";
+}
+
+.devicons-visualstudio:before {
+  content: "";
+}
+
+.devicons-unity_small:before {
+  content: "";
+}
+
+.devicons-raspberry_pi:before {
+  content: "";
+}
+
+.devicons-chrome:before {
+  content: "";
+}
+
+.devicons-ie:before {
+  content: "";
+}
+
+.devicons-firefox:before {
+  content: "";
+}
+
+.devicons-opera:before {
+  content: "";
+}
+
+.devicons-safari:before {
+  content: "";
+}
+
+.devicons-swift:before {
+  content: "";
+}
+
+.devicons-symfony:before {
+  content: "";
+}
+
+.devicons-symfony_badge:before {
+  content: "";
+}
+
+.devicons-less:before {
+  content: "";
+}
+
+.devicons-stylus:before {
+  content: "";
+}
+
+.devicons-trello:before {
+  content: "";
+}
+
+.devicons-atlassian:before {
+  content: "";
+}
+
+.devicons-jira:before {
+  content: "";
+}
+
+.devicons-envato:before {
+  content: "";
+}
+
+.devicons-snap_svg:before {
+  content: "";
+}
+
+.devicons-raphael:before {
+  content: "";
+}
+
+.devicons-google_analytics:before {
+  content: "";
+}
+
+.devicons-compass:before {
+  content: "";
+}
+
+.devicons-onedrive:before {
+  content: "";
+}
+
+.devicons-gulp:before {
+  content: "";
+}
+
+.devicons-atom:before {
+  content: "";
+}
+
+.devicons-cisco:before {
+  content: "";
+}
+
+.devicons-nancy:before {
+  content: "";
+}
+
+.devicons-clojure:before {
+  content: "";
+}
+
+.devicons-clojure_alt:before {
+  content: "";
+}
+
+.devicons-perl:before {
+  content: "";
+}
+
+.devicons-celluloid:before {
+  content: "";
+}
+
+.devicons-w3c:before {
+  content: "";
+}
+
+.devicons-redis:before {
+  content: "";
+}
+
+.devicons-postgresql:before {
+  content: "";
+}
+
+.devicons-webplatform:before {
+  content: "";
+}
+
+.devicons-jenkins:before {
+  content: "";
+}
+
+.devicons-requirejs:before {
+  content: "";
+}
+
+.devicons-opensource:before {
+  content: "";
+}
+
+.devicons-typo3:before {
+  content: "";
+}
+
+.devicons-uikit:before {
+  content: "";
+}
+
+.devicons-doctrine:before {
+  content: "";
+}
+
+.devicons-groovy:before {
+  content: "";
+}
+
+.devicons-nginx:before {
+  content: "";
+}
+
+.devicons-haskell:before {
+  content: "";
+}
+
+.devicons-zend:before {
+  content: "";
+}
+
+.devicons-gnu:before {
+  content: "";
+}
+
+.devicons-yeoman:before {
+  content: "";
+}
+
+.devicons-heroku:before {
+  content: "";
+}
+
+.devicons-debian:before {
+  content: "";
+}
+
+.devicons-travis:before {
+  content: "";
+}
+
+.devicons-dotnet:before {
+  content: "";
+}
+
+.devicons-codeigniter:before {
+  content: "";
+}
+
+.devicons-javascript_badge:before {
+  content: "";
+}
+
+.devicons-yii:before {
+  content: "";
+}
+
+.devicons-msql_server:before {
+  content: "";
+}
+
+.devicons-composer:before {
+  content: "";
+}
+
+.devicons-krakenjs_badge:before {
+  content: "";
+}
+
+.devicons-krakenjs:before {
+  content: "";
+}
+
+.devicons-mozilla:before {
+  content: "";
+}
+
+.devicons-firebase:before {
+  content: "";
+}
+
+.devicons-sizzlejs:before {
+  content: "";
+}
+
+.devicons-creativecommons:before {
+  content: "";
+}
+
+.devicons-creativecommons_badge:before {
+  content: "";
+}
+
+.devicons-mitlicence:before {
+  content: "";
+}
+
+.devicons-senchatouch:before {
+  content: "";
+}
+
+.devicons-bugsense:before {
+  content: "";
+}
+
+.devicons-extjs:before {
+  content: "";
+}
+
+.devicons-mootools_badge:before {
+  content: "";
+}
+
+.devicons-mootools:before {
+  content: "";
+}
+
+.devicons-ruby_rough:before {
+  content: "";
+}
+
+.devicons-komodo:before {
+  content: "";
+}
+
+.devicons-coda:before {
+  content: "";
+}
+
+.devicons-bintray:before {
+  content: "";
+}
+
+.devicons-terminal:before {
+  content: "";
+}
+
+.devicons-code:before {
+  content: "";
+}
+
+.devicons-responsive:before {
+  content: "";
+}
+
+.devicons-dart:before {
+  content: "";
+}
+
+.devicons-aptana:before {
+  content: "";
+}
+
+.devicons-mailchimp:before {
+  content: "";
+}
+
+.devicons-netbeans:before {
+  content: "";
+}
+
+.devicons-dreamweaver:before {
+  content: "";
+}
+
+.devicons-brackets:before {
+  content: "";
+}
+
+.devicons-eclipse:before {
+  content: "";
+}
+
+.devicons-cloud9:before {
+  content: "";
+}
+
+.devicons-scrum:before {
+  content: "";
+}
+
+.devicons-prolog:before {
+  content: "";
+}
+
+.devicons-terminal_badge:before {
+  content: "";
+}
+
+.devicons-code_badge:before {
+  content: "";
+}
+
+.devicons-mongodb:before {
+  content: "";
+}
+
+.devicons-meteor:before {
+  content: "";
+}
+
+.devicons-meteorfull:before {
+  content: "";
+}
+
+.devicons-fsharp:before {
+  content: "";
+}
+
+.devicons-rust:before {
+  content: "";
+}
+
+.devicons-ionic:before {
+  content: "";
+}
+
+.devicons-sublime:before {
+  content: "";
+}
+
+.devicons-appcelerator:before {
+  content: "";
+}
+
+.devicons-asterisk:before {
+  content: "";
+}
+
+.devicons-aws:before {
+  content: "";
+}
+
+.devicons-digital-ocean:before {
+  content: "";
+}
+
+.devicons-dlang:before {
+  content: "";
+}
+
+.devicons-docker:before {
+  content: "";
+}
+
+.devicons-erlang:before {
+  content: "";
+}
+
+.devicons-google-cloud-platform:before {
+  content: "";
+}
+
+.devicons-grails:before {
+  content: "";
+}
+
+.devicons-illustrator:before {
+  content: "";
+}
+
+.devicons-intellij:before {
+  content: "";
+}
+
+.devicons-materializecss:before {
+  content: "";
+}
+
+.devicons-openshift:before {
+  content: "";
+}
+
+.devicons-photoshop:before {
+  content: "";
+}
+
+.devicons-rackspace:before {
+  content: "";
+}
+
+.devicons-react:before {
+  content: "";
+}
+
+.devicons-redhat:before {
+  content: "";
+}
+
+.devicons-scriptcs:before {
+  content: "";
+}
+
+.devicons-sqllite:before {
+  content: "";
+}
+
+.devicons-vim:before {
+  content: "";
 }

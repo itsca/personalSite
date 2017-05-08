@@ -6,7 +6,9 @@
   "dependencies": {
     "angular": "^1.6.4",
     "angular-animate": "^1.6.4",
-    "angular-route": "^1.6.4"
+    "angular-route": "^1.6.4",
+    "perfect-scrollbar": "^0.6.16",
+    "webflow-api": "^0.4.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

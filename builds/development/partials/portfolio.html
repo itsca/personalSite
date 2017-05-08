@@ -1,0 +1,19 @@
+<section id="portfolio-sec" class="content-section">
+	<div class="container customScroll">
+		<h1>Portfolio</h1>
+		<div class="row portfolio-top">
+             <ul id="filter-nav" class="nav" role="navigation">
+             	<li><span class="filter" data-filter="all">All</span></li>
+                <li><span class="filter" data-filter=".category-2">Comercial</span></li>
+                <li><span class="filter" data-filter=".category-1">Personal</span></li>
+            </ul>
+            <div class="cf"></div>   
+		</div>
+		<div id="portfolio-wrap">
+		    <div id="portfolio-list">
+		        <div class="mix category-{{item.cat}}" ng-repeat="item in proyects track by $index">{{item.name}}</div>
+		    </div>
+	    </div>
+	</div>
+</section>
+<!--class="item mix category-all"-->
