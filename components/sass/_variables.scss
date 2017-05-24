@@ -1,11 +1,20 @@
 // _variables.scss
 // =================
 // importing gooogle fonts
-@import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
+@import "http://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro";
 //colors
-$colorName         : #000;
+$fontcolor1          : #082639;
+$aboutcolor1         : #3333ff;
+//$aboutcolor1         : #ECC3B9;
+$aboutcolor2         : #1F2348;
+$portfoliocolor1         : #0AE485;
+$portfoliocolor2         : #fff;
+$hirecolor1         : #5C008C;
+$hirecolor2         : #e40a4f;
+
 //fonts
-$headFont : 'Patua One', sans-serif;
-$bodyFont : 'Inika', serif;
+$headFont : 'Open Sans', sans-serif;
+$headFont1 : Courier,monospace;
+$bodyFont : 'Source Sans Pro', sans-serif;
 //breakpoints
-$mainBreakPoint : 736px;
+$mainBreakPoint : 850px;

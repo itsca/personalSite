@@ -50,10 +50,23 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 			} else {
 				jQuery('#portfolio-list').mixItUp();
 			}
-			//jQuery('#portfolio-list').mixItUp();
-			/**/
 		});
 	initScrolls();
+
+	//events
+	//======
+	/*jQuery('.filter').click(function(e){
+		var thisFilter = e.target;
+		if (!jQuery(thisFilter).hasClass("active")) {
+			console.log("doesnt have it");
+			jQuery(thisFilter).addClass("active");
+		}
+	});*/
+})
+.controller('navController', function navController($scope, $location) {
+	$scope.isActivePath = function (path) {
+      return $location.path() == path;
+    };
 });
 appControllers.factory('$mainFactory', function($routeParams, $location, $rootScope){
     var webflow = new Webflow({ token: "b9b312039034d375b2916a048480ca9bf13e8b9cd6dded80778e21399a6c3137" });

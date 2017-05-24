@@ -21,8 +21,21 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 			} else {
 				jQuery('#portfolio-list').mixItUp();
 			}
-			//jQuery('#portfolio-list').mixItUp();
-			/**/
 		});
 	initScrolls();
+
+	//events
+	//======
+	/*jQuery('.filter').click(function(e){
+		var thisFilter = e.target;
+		if (!jQuery(thisFilter).hasClass("active")) {
+			console.log("doesnt have it");
+			jQuery(thisFilter).addClass("active");
+		}
+	});*/
+})
+.controller('navController', function navController($scope, $location) {
+	$scope.isActivePath = function (path) {
+      return $location.path() == path;
+    };
 });

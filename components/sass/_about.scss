@@ -1,7 +1,7 @@
 #about-sec {
 	ul {
 		list-style: none;
-		padding: 20px 0 0 0;
+		padding: 0 0 0 0;
 		text-align: left;
 		 li {
 		 	margin-bottom: 2em;
@@ -12,9 +12,49 @@
 	}
 	.container {
 		padding: 0px 15px;
-		background: #0A24E4;
-		-webkit-box-shadow: -7px 10px 0px 0px #1F2348;
-		-moz-box-shadow: -7px 10px 0px 0px #1F2348;
-		box-shadow: -7px 10px 0px 0px #1F2348;
+		background: $aboutcolor1;
+		color: $aboutcolor2;
+		-webkit-box-shadow: -7px 10px 0px 0px $aboutcolor2;
+		-moz-box-shadow: -7px 10px 0px 0px $aboutcolor2;
+		box-shadow: -7px 10px 0px 0px $aboutcolor2;
+	}
+
+	#tools {
+		h3 {
+			text-align: center;
+			font-weight: bold;
+			color: $aboutcolor2;
+			font-size: 1.3em;
+		}
+		ul{
+			//border:1px solid #ccc;
+		    list-style:none;
+		    margin:0;
+		    padding:0;
+		    text-align:center;
+			li {
+				display:inline;
+				p {
+					display:inline-block;
+					margin: 0.3em auto; 
+					font-size: 3em;
+    				padding:10px 15px;
+					color: $aboutcolor2;
+					text-decoration: none;
+					border-bottom: 1px solid transparent;
+					transition: all 1s;
+					/*&:hover {
+						border-bottom: 1px solid $aboutcolor2;
+					}
+					&:focus, &:active, &:visited {
+						color: $aboutcolor2;
+						text-decoration: none;
+					}
+					&:active {
+						border-bottom: 1px solid $aboutcolor2;
+					}*/
+				}
+			}
+		}
 	}
 }

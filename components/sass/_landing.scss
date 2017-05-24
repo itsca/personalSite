@@ -1,12 +1,176 @@
 #landing-sec {
 	opacity: 0;
-	@include animation('apear 3s 3s forwards');
-	.container {
-		width: 50%;
-		padding: 0 1%;
-		background: #e40a4f;
-		-webkit-box-shadow: -7px 10px 0px 0px #1F2348;
-		-moz-box-shadow: -7px 10px 0px 0px #1F2348;
-		box-shadow: -7px 10px 0px 0px #1F2348;
+	//@include animation('apear 3s 3s forwards');
+	h2 {
+		font-size: 2em;
+		color: $fontcolor1;
+		font-family: $headFont;
+		font-weight: 800;
+		margin-bottom: 2em;
+	}
+	#welcome-section {
+		margin-bottom: 8em;
+		#welcome-img {
+			width: 45%;
+			float: right;
+			padding: 10px;
+			img {
+				width: 100%;
+			    max-width: 450px;
+			    margin: 0 auto;
+			    display: block;
+			}
+			@media (max-width: $mainBreakPoint) {
+				width: 100%;
+			}
+		}
+		.welcome-text {
+			width: 50%;
+			float: right;
+			padding: 0 1%;
+			color: #333;
+			font-weight: 300;
+			/*background: #e40a4f;*/
+			/*-webkit-box-shadow: -7px 10px 0px 0px #1F2348;
+			-moz-box-shadow: -7px 10px 0px 0px #1F2348;
+			box-shadow: -7px 10px 0px 0px #1F2348;*/
+			h1 {
+				font-size: 2em;
+				color: $fontcolor1;
+				font-family: $headFont;
+				font-weight: 800;
+				margin: 0 0 0.5em 0;
+			}
+			.quote {
+				text-align: center;
+			}
+			@media (max-width: $mainBreakPoint) {
+				width: 100%;
+			}
+		}
+	}
+	#skills-section {
+		margin-bottom: 8em;
+		h3 {
+			font-size: 1.2em;
+			color: $fontcolor1;
+			font-family: $headFont;
+			font-weight: 800;
+			text-align: center;
+			span {
+				padding-bottom: 0.2em;
+    			border-bottom: 4px solid #3333ff;
+			}
+		}
+
+		#skills {
+			.skill {
+				margin-bottom: 2em;
+				ul{
+					//border:1px solid #ccc;
+				    list-style:none;
+				    margin:0;
+				    padding:0;
+				    text-align:center;
+					li {
+						display:inline;
+						p {
+							display:inline-block;
+							margin: 0.3em auto; 
+							font-size: 2.5em;
+		    				padding:10px 15px;
+							color: $fontcolor1;
+							text-decoration: none;
+							border-bottom: 1px solid transparent;
+							transition: all 1s;
+							/*&:hover {
+								border-bottom: 1px solid $aboutcolor2;
+							}
+							&:focus, &:active, &:visited {
+								color: $aboutcolor2;
+								text-decoration: none;
+							}
+							&:active {
+								border-bottom: 1px solid $aboutcolor2;
+							}*/
+						}
+					}
+				}
+			}
+		}
+	}
+	#experience-section {
+		margin-bottom: 8em;
+		.position {
+			margin-bottom: 3em;
+			h3 {
+				font-size: 1.2em;
+				color: $fontcolor1;
+				font-family: $headFont;
+				font-weight: 800;
+				margin: 0 0 0.5em 0;
+				float: left;
+			}
+			h4 {
+				font-size: 1em;
+				font-style: italic;
+				color: #3333ff;
+				font-family: $headFont;
+				font-weight: 800;
+				margin: 0 0 1em 0;
+			}
+			p {
+				font-size: 1em;
+				color: #333;
+				font-family: $bodyFont;
+				font-weight: 100;
+				margin: 0 0 1em 0;
+			}
+			.date {
+				float: right
+			}
+		}
+	}
+	#follow-section {
+		margin-bottom: 8em;
+		ul{
+			//border:1px solid #ccc;
+		    list-style:none;
+		    margin:0;
+		    padding:0;
+		    text-align:center;
+			li {
+				display:inline;
+				padding: 0 1em;
+				a {
+					display:inline-block;
+					margin: 0.3em auto;
+    				padding:10px 15px;
+					font-size: 1.2em;
+					text-decoration: none;
+					font-family: $headFont;
+					transition: all 0.5s;
+					&:hover {
+						color: #fff;
+					}
+    			}
+			}
+		}
+		#workBtn {
+			&:hover {
+				background-color: $portfoliocolor1;
+			}
+		}
+		#contactBtn {
+			&:hover {
+				background-color: $hirecolor1;
+			}
+		}
+	}
+	.colored-text {
+		color: #3333ff;
+		font-weight: 800;
+		font-size: 1.8em;
+		line-height: 0.5em;
 	}
 }

@@ -1,6 +1,6 @@
 <section id="portfolio-sec" class="content-section">
 	<div class="container customScroll">
-		<h1>Portfolio</h1>
+		<h1>Portfolio<span class="colored-text">.</span></h1>
 		<div class="row portfolio-top">
              <ul id="filter-nav" class="nav" role="navigation">
              	<li><span class="filter" data-filter="all">All</span></li>
@@ -11,7 +11,17 @@
 		</div>
 		<div id="portfolio-wrap">
 		    <div id="portfolio-list">
-		        <div class="mix category-{{item.cat}}" ng-repeat="item in proyects track by $index">{{item.name}}</div>
+		        <!--<div class="mix category-{{item.cat}}" ng-style="{'background-image':'url({{item['main-project-image'].url}})'}" ng-repeat="item in proyects track by $index"><h2>{{item.name}}</h2></div>-->
+		        <div class="mix category-{{item.cat}}" ng-repeat="item in proyects track by $index">
+		        	<div class="img-wrapper">
+		        		<div class="item-img" ng-style="{'background-image':'url({{item['main-project-image'].url}})'}"></div>
+		        	</div>
+		        	<!--<img ng-src="{{item['main-project-image'].url}}" alt="">-->
+		        	<h2>{{item.name}}</h2>
+		        	<h3 class="date">12 may 2017</h3>
+		        	<h4 class="stack">Stack: HTML, CSS, SASS, JS, GULP, ANGULAR</h4>
+		        </div>
+		        <div class="cf"></div>
 		    </div>
 	    </div>
 	</div>

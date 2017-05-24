@@ -20,7 +20,7 @@
 }
 #main-head {
 	width: 100%;
-	margin-bottom: 2.5em;
+	margin-bottom: 5em;
 	#logo-container {
 		width: 100%;
 		#Layer_1 {
@@ -33,6 +33,7 @@
 		}
 	}
 	#main-nav {
+		padding-top: 1em;
 		@include animation('apear 9s forwards');
 		ul{
 			//border:1px solid #ccc;
@@ -43,22 +44,53 @@
 			li {
 				display:inline;
 				a {
-					font-family: helvetica;
+					font-family: $headFont;
+					font-weight: bolder;
+					font-size: 1em;
 					display:inline-block;
     				padding:10px 15px;
-					color: #fff;
+					color: $fontcolor1;
 					text-decoration: none;
-					border-bottom: 1px solid transparent;
+					border-bottom: 3px solid transparent;
 					transition: all 1s;
-					&:hover {
-						border-bottom: 1px solid #FFF;
-					}
 					&:focus, &:active, &:visited {
-						color: #fff;
+						color: $fontcolor1;
 						text-decoration: none;
 					}
-					&:active {
-						border-bottom: 1px solid #FFF;
+					&.active {
+						/*-webkit-box-shadow: -7px 10px 0px 0px $aboutcolor2;
+						-moz-box-shadow: -7px 10px 0px 0px $aboutcolor2;
+						box-shadow: -7px 10px 0px 0px $aboutcolor2;*/
+					}
+					@media (max-width: $mainBreakPoint) {
+						font-size: 0.8em;
+					}
+				}
+				#about-link {
+					&.active {
+						background: $aboutcolor1;
+						color: #fff;
+					}
+					&:hover {
+						border-bottom: 3px solid $aboutcolor1;
+					}
+				}
+				#portfolio-link {
+					&.active {
+						background: $portfoliocolor1;
+						color: $portfoliocolor2;
+					}
+					&:hover {
+						border-bottom: 3px solid $portfoliocolor1;
+					}
+				}
+				#hire-link {
+					&.active {
+						background: $hirecolor1;
+						color: $hirecolor1;
+					}
+					&:hover {
+						border-bottom: 3px solid $hirecolor1;
 					}
 				}
 			}
@@ -72,19 +104,24 @@
 	opacity: 0;
 	@include animation('apear 3s 0.5s forwards');
 	//text-align: center;
-	font-family: helvetica;
+	font-family: $bodyFont;
+	font-weight: 800;
 	color: #fff;
 	.container {
 		position: relative;
 		width: 80%;
-		@media (max-width: 780px) {
-			width: 90%;
-		}
-		height: 400px;
-		max-height: 450px;
-		overflow: overlay;
 	}
 	#welcome-text {
 		line-height: 1.4em;
 	}
+}
+
+//Buttons
+// ============
+.btn1 {
+	font-family: $bodyFont;
+	font-weight: 800;
+	color: $fontcolor1;
+	background-color: #efefef;
+	padding: 0.5em;
 }
