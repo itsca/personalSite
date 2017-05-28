@@ -16,6 +16,10 @@ portFolioApp.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'partials/portfolio.html',
 		controller: 'viewsController' 
 	}).
+	when('/contact', {
+		templateUrl: 'partials/contact.html',
+		controller: 'viewsController' 
+	}).
 	otherwise({
 		redirectTo :'/landing'
 	});

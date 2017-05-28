@@ -86,11 +86,11 @@
 				}
 				#hire-link {
 					&.active {
-						background: $hirecolor1;
-						color: $hirecolor1;
+						background: $hirecolor2;
+						color: #FFF;
 					}
 					&:hover {
-						border-bottom: 3px solid $hirecolor1;
+						border-bottom: 3px solid $hirecolor2;
 					}
 				}
 			}

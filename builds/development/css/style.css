@@ -232,11 +232,11 @@ body {
   border-bottom: 3px solid #0AE485;
 }
 #main-head #main-nav ul li #hire-link.active {
-  background: #5C008C;
-  color: #5C008C;
+  background: #e40a4f;
+  color: #FFF;
 }
 #main-head #main-nav ul li #hire-link:hover {
-  border-bottom: 3px solid #5C008C;
+  border-bottom: 3px solid #e40a4f;
 }
 
 .content-section {
@@ -574,7 +574,7 @@ body {
   background-color: #0AE485;
 }
 #landing-sec #follow-section #contactBtn:hover {
-  background-color: #5C008C;
+  background-color: #e40a4f;
 }
 #landing-sec .colored-text {
   color: #3333ff;
@@ -720,8 +720,7 @@ body {
   display: block;
   position: relative;
   top: -100%;
-  background-color: #0AE485;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 #portfolio-sec #portfolio-wrap .mix .item-img {
   background: #0AE485;
@@ -731,9 +730,6 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-filter: grayscale(100%);
-  /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -752,6 +748,84 @@ body {
 }
 #portfolio-sec .colored-text {
   color: #0AE485;
+  font-weight: 800;
+  font-size: 1.8em;
+  line-height: 0.5em;
+}
+
+#contact-sec {
+  /*End Contact*/
+}
+#contact-sec .container {
+  width: 50%;
+}
+@media (max-width: 850px) {
+  #contact-sec .container {
+    width: 90%;
+  }
+}
+#contact-sec h2 {
+  font-size: 2em;
+  color: #082639;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  margin-bottom: 2em;
+}
+#contact-sec #cForm {
+  margin: 0 auto;
+  margin-bottom: 5%;
+  color: #082639;
+}
+#contact-sec .control-group {
+  margin-bottom: 0.7em;
+}
+#contact-sec .control-group label {
+  display: block;
+  margin: 0 30px 10px 0px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1wm;
+  font-weight: bold;
+}
+#contact-sec .control-group .text {
+  width: 80%;
+  margin-bottom: 3%;
+  padding: 0.5%;
+  background-color: transparent;
+  height: 2em;
+  border: 1px solid #082639;
+  color: #555;
+  font-size: 1.1em;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+#contact-sec .control-group .text:active, #contact-sec .control-group .text:focus, #contact-sec .control-group .text:hover {
+  height: 4em;
+  outline: none;
+}
+#contact-sec .control-group #subjectField {
+  width: 100%;
+}
+#contact-sec .btn1 {
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 1.1em;
+}
+#contact-sec .btn1:hover, #contact-sec .btn1:active {
+  border: none;
+  background-color: #e40a4f;
+  color: #FFF;
+  text-decoration: none;
+}
+#contact-sec #thanksMsj {
+  display: none;
+}
+#contact-sec .colored-text {
+  color: #e40a4f;
   font-weight: 800;
   font-size: 1.8em;
   line-height: 0.5em;

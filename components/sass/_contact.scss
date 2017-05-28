@@ -1,0 +1,87 @@
+#contact-sec {
+	.container {
+		width: 50%;
+		@media (max-width: $mainBreakPoint) {
+			width: 90%;
+		}
+	}
+	//@include animation('apear 3s 3s forwards');
+	h2 {
+		font-size: 2em;
+		color: $fontcolor1;
+		font-family: $headFont;
+		font-weight: 800;
+		margin-bottom: 2em;
+	}
+
+	#cForm {
+		margin: 0 auto;
+		margin-bottom: 5%;
+		color: $fontcolor1;
+	}
+
+	.control-group {
+		margin-bottom: 0.7em;
+
+		label {
+			display: block;
+			margin: 0 30px 10px 0px;
+			font-family: $headFont;
+			font-size: 1wm;
+			font-weight: bold;
+
+		}
+
+		.text {
+			width: 80%;
+			margin-bottom: 3%;
+			padding: 0.5%;
+			background-color: transparent;
+			height: 2em;
+			border: 1px solid  $fontcolor1;
+			color: #555;
+			font-size: 1.1em;
+			-webkit-transition: all 0.4s;
+			-o-transition: all 0.4s;
+			transition: all 0.4s;
+
+			&:active, &:focus, &:hover {
+				height: 4em;
+				outline: none;
+			}
+		}
+		#subjectField {
+			width: 100%;
+		}
+	}
+
+	.btn1 {
+		cursor: pointer;
+		text-transform: uppercase;
+		border: none;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
+		font-size: 1.1em;
+
+		&:hover,&:active {
+			border: none;
+			background-color: $hirecolor2;
+			color: #FFF;
+			text-decoration: none;
+		}
+
+	}
+
+	#thanksMsj {
+		display: none;
+	}
+
+	/*End Contact*/
+	.colored-text {
+		color: $hirecolor2;
+		font-weight: 800;
+		font-size: 1.8em;
+		line-height: 0.5em;
+	}
+}
