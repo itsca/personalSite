@@ -24,3 +24,9 @@ portFolioApp.config(['$routeProvider', function($routeProvider) {
 		redirectTo :'/landing'
 	});
 }]);
+
+portFolioApp.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}]);

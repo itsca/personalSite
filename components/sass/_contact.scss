@@ -27,7 +27,7 @@
 			display: block;
 			margin: 0 30px 10px 0px;
 			font-family: $headFont;
-			font-size: 1wm;
+			font-size: 1em;
 			font-weight: bold;
 
 		}
@@ -46,7 +46,7 @@
 			transition: all 0.4s;
 
 			&:active, &:focus, &:hover {
-				height: 4em;
+				height: 2.5em;
 				outline: none;
 			}
 		}

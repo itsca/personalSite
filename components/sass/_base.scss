@@ -4,12 +4,10 @@ body {
   margin: 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  /*@include backImage("http://javierescalante.info/img/myFace.gif");
-  height: 100vh;*/
-  /*@media (max-width: 630px) {
-  	    background: url(http://javierescalante.info/img/myFace.gif) no-repeat 50% 50% !important;
-  }*/
   transition: all 0.4s;
+  &.body-hidden {
+    	overflow: hidden;
+	}
 }
 
 .cf {

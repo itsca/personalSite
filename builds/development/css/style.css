@@ -4,12 +4,10 @@ body {
   margin: 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  /*@include backImage("http://javierescalante.info/img/myFace.gif");
-  height: 100vh;*/
-  /*@media (max-width: 630px) {
-  	    background: url(http://javierescalante.info/img/myFace.gif) no-repeat 50% 50% !important;
-  }*/
   transition: all 0.4s;
+}
+body.body-hidden {
+  overflow: hidden;
 }
 
 .cf {
@@ -681,16 +679,12 @@ body {
 }
 #portfolio-sec #portfolio-wrap .mix {
   display: none;
-  width: 46%;
+  width: 45%;
   padding: 15px;
   margin: 0 0 4em 0;
   cursor: pointer;
   float: left;
-}
-@media (max-width: 850px) {
-  #portfolio-sec #portfolio-wrap .mix {
-    width: 80%;
-  }
+  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.3s, left 0.4s 0.3s;
 }
 #portfolio-sec #portfolio-wrap .mix h2 {
   color: #082639;
@@ -699,12 +693,15 @@ body {
   font-size: 1em;
 }
 #portfolio-sec #portfolio-wrap .mix h3, #portfolio-sec #portfolio-wrap .mix h4 {
-  color: #333;
+  color: #666;
   font-family: "Open Sans", sans-serif;
   text-align: left;
   font-weight: 500;
   font-size: 0.9em;
   margin: 0 0 0.5em 0;
+}
+#portfolio-sec #portfolio-wrap .mix .container {
+  width: 100%;
 }
 #portfolio-sec #portfolio-wrap .mix .img-wrapper {
   width: 100%;
@@ -730,21 +727,111 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 #portfolio-sec #portfolio-wrap .mix:hover .item-img {
-  -webkit-transform: scale(1.3);
-  -moz-transform: scale(1.3);
-  -o-transform: scale(1.3);
-  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+#portfolio-sec #portfolio-wrap .mix.open {
+  display: block;
+  position: fixed;
+  float: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  z-index: 2;
+  background: rgba(10, 10, 10, 0.8);
+}
+#portfolio-sec #portfolio-wrap .mix.open .container {
+  width: 80%;
+  background-color: #FFF;
 }
 @media (max-width: 850px) {
   #portfolio-sec #portfolio-wrap .mix {
     width: 100%;
   }
+}
+#portfolio-sec #portfolio-modal {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  	/*.portfolio-modal-img {
+  		background-image: url(https://images.unsplash.com/photo-1495141929506-f34c93658f5d?dpr=1&auto=compress,format&fit=crop&w=1199&h=1799&q=80&cs=tinysrgb&crop=&bg=);
+      	width: 100%;
+      	height: 400px;
+      	clip-path: url("../images/clip-shape.svg#clipPath1");
+      	-webkit-clip-path: url("../images/clip-shape.svg#clipPath1");
+      	-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+  	}*/
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content {
+  padding: 1em 0;
+  background: #FFF;
+  color: #082639;
+  text-align: left;
+  transition: all 0.5s;
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content h2 {
+  font-size: 3.5em;
+  margin: 0.2em 0;
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content h3, #portfolio-sec #portfolio-modal #portfolio-modal-content h4 {
+  font-size: 1.2em;
+  color: #666;
+  font-family: "Open Sans", sans-serif;
+  margin: 0 0 0.2em 0;
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content h4 {
+  margin: 0 0 3em 0;
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content .copy {
+  font-size: 1.2em;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  margin: 0 0 0 0;
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content img {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto 2em;
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content .portfolio-modal-closer {
+  margin: 0;
+  font-size: 1.5em;
+  color: #666;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: right;
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content #view-site-btn {
+  display: inline-block;
+  margin: 2em auto;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+#portfolio-sec #portfolio-modal #portfolio-modal-content #view-site-btn:hover {
+  color: #fff;
+  background-color: #0AE485;
 }
 #portfolio-sec .colored-text {
   color: #0AE485;
@@ -783,7 +870,7 @@ body {
   display: block;
   margin: 0 30px 10px 0px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1wm;
+  font-size: 1em;
   font-weight: bold;
 }
 #contact-sec .control-group .text {
@@ -800,7 +887,7 @@ body {
   transition: all 0.4s;
 }
 #contact-sec .control-group .text:active, #contact-sec .control-group .text:focus, #contact-sec .control-group .text:hover {
-  height: 4em;
+  height: 2.5em;
   outline: none;
 }
 #contact-sec .control-group #subjectField {

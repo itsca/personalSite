@@ -7,23 +7,48 @@
                 <li><span class="filter" data-filter=".category-1">Comercial</span></li>
                 <li><span class="filter" data-filter=".category-2">Personal</span></li>
             </ul>
-            <div class="cf"></div>   
+            <div class="cf"></div>
 		</div>
 		<div id="portfolio-wrap">
-		    <div id="portfolio-list">
-		        <!--<div class="mix category-{{item.cat}}" ng-style="{'background-image':'url({{item['main-project-image'].url}})'}" ng-repeat="item in proyects track by $index"><h2>{{item.name}}</h2></div>-->
-		        <div class="mix category-{{item.cat}}" ng-repeat="item in proyects track by $index">
-		        	<div class="img-wrapper">
-		        		<div class="item-img" ng-style="{'background-image':'url({{item['main-project-image'].url}})'}"></div>
+			<div id="portfolio-modal">
+				<!--<div class="portfolio-modal-img">
+				</div>-->
+				<svg class="modal__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+					<defs>
+						<clipPath id="clipPath1">
+							<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+							<circle id="clip-shape" cx="960" cy="250" r="0%"></circle>
+						</clipPath>
+					</defs>
+					<image clip-path="url(#clipPath1)" width="1920" height="500" xlink:href="{{currProyect['main-project-image'].url | trusted}}"></image>
+				</svg>
+				<div id="portfolio-modal-content">
+					<div class="container">
+						<p class="portfolio-modal-closer" ng-click="closeModal()">X</p>
+						<h2>{{currProyect.name}}<span class="colored-text">.</span></h2>
+						<h3>{{currProyect.projectdate | date:'MMMM, yyyy'}}</h3>
+						<h4>Stack: {{currProyect.stack}}</h4>
+						<p class="copy">{{currProyect["project-summary"]}}</p>
+						<a id="view-site-btn" class="btn1" ng-href="{{currProyectUrl}}">CHECK IT OUT</a>
+						<img ng-if="currProyect['second-image'].url" ng-src="{{currProyect['second-image'].url | trusted}}" alt="">
+						<img ng-if="currProyect['third-image'].url" ng-src="{{currProyect['third-image'].url | trusted}}" alt="">
+					</div>
+					
+				</div>
+			</div>
+			<div id="portfolio-list">
+		        <div class="mix category-{{item.cat}}" ng-repeat="item in proyects track by $index" ng-click="openModal(item._id)">
+		        	<div class="container">
+		        		<div class="img-wrapper">
+			        		<div class="item-img" ng-style="{'background-image':'url({{item['main-project-image'].url}})'}"></div>
+			        	</div>
+			        	<h2>{{item.name}}</h2>
+			        	<h3 class="date">{{item.projectdate | date:'MMMM, yyyy'}}</h3>
+			        	<h4 class="stack">Stack: {{item.stack}}</h4>
 		        	</div>
-		        	<!--<img ng-src="{{item['main-project-image'].url}}" alt="">-->
-		        	<h2>{{item.name}}</h2>
-		        	<h3 class="date">12 may 2017</h3>
-		        	<h4 class="stack">Stack: HTML, CSS, SASS, JS, GULP, ANGULAR</h4>
 		        </div>
 		        <div class="cf"></div>
 		    </div>
 	    </div>
 	</div>
 </section>
-<!--class="item mix category-all"-->
