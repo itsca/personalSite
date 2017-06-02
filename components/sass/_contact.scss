@@ -11,7 +11,6 @@
 		color: $fontcolor1;
 		font-family: $headFont;
 		font-weight: 800;
-		margin-bottom: 2em;
 	}
 
 	#cForm {
@@ -75,6 +74,13 @@
 
 	#thanksMsj {
 		display: none;
+	}
+
+	.sIcons {
+		margin-bottom: 2em;
+		ul {
+		    text-align: left;
+		}
 	}
 
 	/*End Contact*/

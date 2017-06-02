@@ -61,6 +61,7 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 	    });
 		// Sequence.
 		jQuery(document.body).addClass("body-hidden");
+	    _TL.insert(TweenLite.to (jQuery('#main-head') , 0.2, {autoAlpha:0}));
 	    _TL.insert(TweenLite.to (jQuery('#portfolio-modal') , 0.3, {autoAlpha:1}));
 	    _TL.insert(TweenLite.to (jQuery('#clip-shape') , 1.3, {
 		      attr: {
@@ -83,7 +84,6 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 		    $scope.proyects = data.items;
 		    $scope.$apply();
 		    console.log($scope.proyects);
-			//console.log("mixing");
 			if (jQuery('#portfolio-wrap').mixItUp('isLoaded')) {
 				jQuery('#portfolio-wrap').mixItUp('destroy');
 				jQuery('#portfolio-wrap').mixItUp();
@@ -92,13 +92,23 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 			}
 		});
 	//initScrolls();
-	//events
-	//======
 })
 .controller('navController', function navController($scope, $location) {
+	var header = jQuery('#main-head');
+
 	$scope.isActivePath = function (path) {
       return $location.path() == path;
     };
+
+    jQuery(window).scroll(function() {
+		if (jQuery(window).scrollTop() >= 200) {
+			if (!jQuery(header).hasClass('header--open')) {
+				jQuery(header).addClass('header--open');
+			}
+		}else {
+			jQuery(header).removeClass('header--open');
+		};
+	});
 });
 appControllers.factory('$mainFactory', function($routeParams, $location, $rootScope){
     var webflow = new Webflow({ token: "b9b312039034d375b2916a048480ca9bf13e8b9cd6dded80778e21399a6c3137" });
