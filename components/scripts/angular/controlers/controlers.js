@@ -1,6 +1,6 @@
 var appControllers = angular.module("appControllers", []);
 
-appControllers.controller('viewsController', function viewsController($scope, $mainFactory) {
+appControllers.controller('viewsController', function viewsController($scope, $mainFactory, $timeout, $rootScope) {
 	var initScrolls = function() {
 		scrolls = document.getElementsByClassName("customScroll");
 		for (var i = 0; i < scrolls.length; i++) {
@@ -9,7 +9,11 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 			});
 		};
 	},
-	_TL = new TimelineLite;
+	_TL = new TimelineLite,
+	webflowRequestBody = {
+    	"apiToken" : "b9b312039034d375b2916a048480ca9bf13e8b9cd6dded80778e21399a6c3137",
+    	"collectionId" : "5900f806c66e3c7cf167d4da"
+	};
 
 	$scope.openModal = function(id) {
 		jQuery.each($scope.proyects, function(i, proyect) {
@@ -38,19 +42,21 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 	    });
 	    return _TL.reverse();
 	}
-
-	$mainFactory.getProyects.then(function(data) {
-		    $scope.proyects = data.items;
-		    $scope.$apply();
-		    console.log($scope.proyects);
-			if (jQuery('#portfolio-wrap').mixItUp('isLoaded')) {
-				jQuery('#portfolio-wrap').mixItUp('destroy');
-				jQuery('#portfolio-wrap').mixItUp();
-			} else {
-				jQuery('#portfolio-wrap').mixItUp();
-			}
-		});
-	//initScrolls();
+	
+	$mainFactory.getProyects(webflowRequestBody).then(function(response){
+			$scope.proyects = response.data.items;
+            $timeout(function(){
+            	$scope.proyects = response.data.items;
+            	$scope.$apply();
+            	console.log($scope.proyects);
+				if (jQuery('#portfolio-wrap').mixItUp('isLoaded')) {
+					jQuery('#portfolio-wrap').mixItUp('destroy');
+					jQuery('#portfolio-wrap').mixItUp();
+				} else {
+					jQuery('#portfolio-wrap').mixItUp();
+				}
+			}, 20);
+          });
 })
 .controller('navController', function navController($scope, $location) {
 	var header = jQuery('#main-head');
