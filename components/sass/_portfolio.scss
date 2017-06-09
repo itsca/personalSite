@@ -41,7 +41,11 @@
 	#portfolio-wrap {
 	    transition: all 0.2s;
 	    text-align: center;
-
+		#loader-icon {
+			    color: #0AE485;
+			    width: 100%;
+			    margin: 1em 0;
+		}
 	    .mix {
 		    display: none;
 		    width: 45%;

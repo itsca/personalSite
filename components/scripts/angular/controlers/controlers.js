@@ -1,6 +1,6 @@
 var appControllers = angular.module("appControllers", []);
 
-appControllers.controller('viewsController', function viewsController($scope, $mainFactory, $timeout, $rootScope) {
+appControllers.controller('viewsController', function viewsController($scope, $mainFactory, $timeout, $rootScope, $http) {
 	var initScrolls = function() {
 		scrolls = document.getElementsByClassName("customScroll");
 		for (var i = 0; i < scrolls.length; i++) {
@@ -42,6 +42,19 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 	    });
 	    return _TL.reverse();
 	}
+
+	$scope.sendCForm = function() {
+		var nameVal = jQuery("#nameField").val(),
+			emailVal = jQuery("#mailField").val(),
+			messageVal = jQuery("#subjectField").val();
+		$http.post('https://formspree.io/itscae@gmail.com', {name: nameVal, email: emailVal, message: messageVal}).then(function(){jQuery("#form-submitted-correctly").show()}, function(response){console.log("email error" + response)});
+	}
+	$scope.closeCModal = function() {
+		jQuery("#nameField").val("");
+		jQuery("#mailField").val("");
+		jQuery("#subjectField").val("");
+		jQuery("#form-submitted-correctly").hide();
+	}
 	
 	$mainFactory.getProyects(webflowRequestBody).then(function(response){
 			$scope.proyects = response.data.items;
@@ -49,6 +62,8 @@ appControllers.controller('viewsController', function viewsController($scope, $m
             	$scope.proyects = response.data.items;
             	$scope.$apply();
             	console.log($scope.proyects);
+            	//Check for contact URL
+            	jQuery('#loader-icon').hide();
 				if (jQuery('#portfolio-wrap').mixItUp('isLoaded')) {
 					jQuery('#portfolio-wrap').mixItUp('destroy');
 					jQuery('#portfolio-wrap').mixItUp();
@@ -57,6 +72,11 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 				}
 			}, 20);
           });
+	/*Button-actions*/
+	jQuery('#submitted-correctly-closer').click(function(event) {
+	    jQuery('#form-submitted-correctly').hide();
+	});
+	
 })
 .controller('navController', function navController($scope, $location) {
 	var header = jQuery('#main-head');

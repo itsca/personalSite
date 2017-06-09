@@ -733,6 +733,11 @@ body.body-hidden {
   transition: all 0.2s;
   text-align: center;
 }
+#portfolio-sec #portfolio-wrap #loader-icon {
+  color: #0AE485;
+  width: 100%;
+  margin: 1em 0;
+}
 #portfolio-sec #portfolio-wrap .mix {
   display: none;
   width: 45%;
@@ -917,6 +922,7 @@ body.body-hidden {
   margin: 0 auto;
   margin-bottom: 5%;
   color: #082639;
+  position: relative;
 }
 #contact-sec .control-group {
   margin-bottom: 0.7em;
@@ -971,6 +977,44 @@ body.body-hidden {
 }
 #contact-sec .sIcons ul {
   text-align: left;
+}
+#contact-sec #form-submitted-correctly {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 33, 33, 0.8);
+  width: 100%;
+  height: 100%;
+  padding-top: 2em;
+  z-index: 1;
+  text-align: center;
+  color: #082639;
+}
+#contact-sec #form-submitted-correctly.open {
+  display: block;
+}
+#contact-sec #form-submitted-correctly .container {
+  background-color: #FFF;
+  padding: 5%;
+}
+#contact-sec #form-submitted-correctly #submitted-correctly-closer {
+  display: block;
+  padding: 2% 1%;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: all 0.5s;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  background: transparent;
+}
+#contact-sec #form-submitted-correctly #submitted-correctly-closer:hover {
+  background-color: #fff;
+  color: #e40a4f;
 }
 #contact-sec .colored-text {
   color: #e40a4f;

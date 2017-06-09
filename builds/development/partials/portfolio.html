@@ -20,7 +20,7 @@
 							<circle id="clip-shape" cx="960" cy="250" r="0%"></circle>
 						</clipPath>
 					</defs>
-					<image clip-path="url(#clipPath1)" width="1920" height="500" xlink:href="{{currProyect['main-project-image'].url | trusted}}"></image>
+					<image clip-path="url(#clipPath1)" width="1920" height="500" xlink:href="{{currProyect['third-image'].url | trusted}}"></image>
 				</svg>
 				<div id="portfolio-modal-content">
 					<div class="container">
@@ -31,12 +31,13 @@
 						<p class="copy">{{currProyect["project-summary"]}}</p>
 						<a id="view-site-btn" class="btn1" ng-href="{{currProyectUrl}}">CHECK IT OUT</a>
 						<img ng-if="currProyect['second-image'].url" ng-src="{{currProyect['second-image'].url | trusted}}" alt="">
-						<img ng-if="currProyect['third-image'].url" ng-src="{{currProyect['third-image'].url | trusted}}" alt="">
 					</div>
 					
 				</div>
 			</div>
 			<div id="portfolio-list">
+				<i id="loader-icon" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+				<span class="sr-only">Loading...</span>
 		        <div class="mix category-{{item.cat}}" ng-repeat="item in proyects track by $index" ng-click="openModal(item._id)">
 		        	<div class="container">
 		        		<div class="img-wrapper">
