@@ -6,7 +6,7 @@ portFolioApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 	when('/landing', {
 		templateUrl: 'partials/landing.html',
-		controller: '' 
+		controller: 'HomeController' 
 	}).
 	when('/about', {
 		templateUrl: 'partials/about.html',

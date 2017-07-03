@@ -94,4 +94,7 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 			jQuery(header).removeClass('header--open');
 		};
 	});
-});
+})
+.controller('HomeController', function navController($scope, $location) {
+	
+});;

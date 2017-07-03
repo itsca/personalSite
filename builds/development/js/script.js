@@ -15,7 +15,7 @@ portFolioApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 	when('/landing', {
 		templateUrl: 'partials/landing.html',
-		controller: '' 
+		controller: 'HomeController' 
 	}).
 	when('/about', {
 		templateUrl: 'partials/about.html',
@@ -135,7 +135,10 @@ appControllers.controller('viewsController', function viewsController($scope, $m
 			jQuery(header).removeClass('header--open');
 		};
 	});
-});
+})
+.controller('HomeController', function navController($scope, $location) {
+	
+});;
 appControllers.factory('$mainFactory', function($routeParams, $location, $rootScope, $http){
     
     var getProyects = function(_requestBody) {
